@@ -17,11 +17,11 @@ const fs=require('fs')
     if(err)throw err;
     console.log('updated file data')
  })
- fs.rename('new.html','excellencehtml',function(err){
-    if(err)throwerr;
-    console.log("mission complete")
- })
-//  fs.unlink("excellence.html",function(err){
-//     if(err)throw err;
-//     console.log("file deleted")
+//  fs.rename('new.html','excellence.html',function(err){
+//     if(err)throwerr;
+//     console.log("mission complete")
 //  })
+ fs.unlink("excellence.html",function(err){
+    if(err)throw err;
+    console.log("file deleted")
+ })
