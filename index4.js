@@ -13,6 +13,7 @@ http.createServer((req,resp)=>{
         fs.readFile(`${__dirname}/data.json`, "utf-8", (err, data) =>{
             console.log(data)
             resp.end(data)
-        }
+        });
+    
     }
 })
