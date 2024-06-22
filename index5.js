@@ -5,15 +5,16 @@ http.createServer((req, resp) => {
     if (req.url === "/") {
         resp.end("Welcome");
     } else if (req.url === "/home") {
-        fs.readFilesync(`${__dirname}/index.html`, "utf-8", (err, data) => {
+        fs.readFile(`${__dirname}/index.html`, "utf-8", (err, data) => {
             if (err) {
-                resp.end("Internal Server Error");
+                resp.end("Internal Server Error")
+                ;
             } else {
                 resp.end(data);
             }
         });
     } else if (req.url === "/contact") {
-        fs.readFilesync(`${__dirname}/Contact.html`, "utf-8", (err, data) => {
+        fs.readFile(`${__dirname}/Contact.html`, "utf-8", (err, data) => {
             if (err) {
                 resp.end("Internal Server Error");
             } else {
@@ -21,7 +22,7 @@ http.createServer((req, resp) => {
             }
         });
     } else if (req.url === "/api") {
-        fs.readFilesync(`${__dirname}/fetchapi.html`, "utf-8", (err, data) => {
+        fs.readFile(`${__dirname}/fetchapi.html`, "utf-8", (err, data) => {
             if (err) {
                 resp.end("Internal Server Error");
             } else {
