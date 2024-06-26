@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div id="card"></div> 
+
+    <script>
+        fetch("https://api.escuelajs.co/api/v1/products")
+        .then((response) => response.json())
+        .then((products) => {
+            let productCards = "";
+            products.forEach((product) => {
+                productCards += `
+                    <div class="card">
+                        <img src="${product.images[0]}" class="card-img-top" alt="${product.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.title}</h5>
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text"><strong>Category:</strong> ${product.category.name}</p>
+                            <p class="card-text"><strong>Price:</strong> $${product.price}</p>
+                        </div>
+                    </div>`;
+            });
+            document.getElementById("card").innerHTML = productCards;
+        })
+        .catch((error) => {
+            console.error("Error fetching products:", error);
+        });
+    </script>
+</body>
+</html>
