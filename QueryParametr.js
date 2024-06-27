@@ -20,3 +20,6 @@ app.get('/',function(req,res){
 app.get('/Home',function(req,res){
     res.send("so sorry this is not home page")
 })
+app.listen(5050, () => {
+    console.log('Server is listening on port 5050');
+});
