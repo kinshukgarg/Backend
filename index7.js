@@ -14,6 +14,3 @@ app.get('/api', (req, res) => {
     res.sendFile(path.join(__dirname, 'fetchapi.html'));
 });
 
-app.listen(5000, () => {
-    console.log('Server is listening on port 5000');
-});
