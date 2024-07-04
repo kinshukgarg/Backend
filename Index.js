@@ -1,27 +1,31 @@
-const fs=require('fs')
-//  fs.readFile('a.txt','utf-8',(err,data)=>{
-//     console.log(data)
-//  })
+var express = require('express');
+var path = require('path');
+var app = express();
 
-// fs.writeFile('b.txt', "hi Kinshuk", (err) => {
-//     if (err) {
-//       console.error("Error writing to file:", err);
-//     } else {
-//       console.log("written to file");
-//     }
-//   });
- fs.open('abc.js','a',function(err,file){
-    console.log('saved')
- })
- fs.appendFile('abc.js',"hi kinshuk",function(err){
-    if(err)throw err;
-    console.log('updated file data')
- })
-//  fs.rename('new.html','excellence.html',function(err){
-//     if(err)throwerr;
-//     console.log("mission complete")
-//  })
- fs.unlink("excellence.html",function(err){
-    if(err)throw err;
-    console.log("file deleted")
- })
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// set the views directory
+app.set('views', path.join(__dirname, 'views'));
+
+// use res.render to load up an ejs view file
+
+// index page
+app.get('/', function(req, res) {
+    const user = {
+        name: 'Rahul',
+        email: 'rahul1234@gmail.com',
+        city: 'Mohali',
+        skills: ['React', 'Node', 'Tailwind']
+    };
+    res.render('profile', { user });
+});
+
+// about page
+app.get('/about', function(req, res) {
+    res.render('pages/about');
+});
+
+app.listen(8080, function() {
+    console.log('Server is listening on port 8080');
+});
