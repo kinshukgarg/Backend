@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 
 // set the views directory
 app.set('views', path.join(__dirname, 'views'));
-
+ 
 // use res.render to load up an ejs view file
 
 // index page
