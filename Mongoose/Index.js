@@ -20,17 +20,22 @@ const main = async () => {
     let result = await data.save();
     console.log(result);
 };
-
-const updateInDB = async () => {
-    let data = await UsersModel.updateMany(
-        { name: "Bob Smith" },
-        { $set: { age: 20, name: "hello" } }
-    );
-    console.log(data);
-};
+//update data
+// const updateInDB = async () => {
+//     let data = await UsersModel.updateMany(
+//         { name: "Bob Smith" },
+//         { $set: { age: 20, name: "hello" } }
+//     );
+//     console.log(data);
+// };
+// delete data 
+// const deleteFromDB=async()=>{
+//     let result=await UsersModel.deleteOne({name:"hello"})
+//     console.log(result)
+// }
 
 main();
-updateInDB();
+// deleteFromDB();
 
 app.listen(8500, () => {
     console.log("server started at 8500");
