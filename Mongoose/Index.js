@@ -24,7 +24,7 @@ const main = async () => {
 // const updateInDB = async () => {
 //     let data = await UsersModel.updateMany(
 //         { name: "Bob Smith" },
-//         { $set: { age: 20, name: "hello" } }
+//         { $set: { age: 30, name: "hello" } }
 //     );
 //     console.log(data);
 // };
